@@ -1,0 +1,7 @@
+id,order_id,payment_method,amount_cents
+1,1,credit_card,2500
+2,2,credit_card,1000
+3,3,gift_card,4500
+4,4,credit_card,3000
+5,5,bank_transfer,8000
+6,6,credit_card,1500

@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw_ecommerce
+    schema: main  # In DuckDB, the default schema is 'main'
+    description: "Raw ingested transactional data from the transactional Postgres replica."
+    tables:
+      - name: raw_customers
+        description: "Raw customer registration events."
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: raw_orders
+        description: "Raw checkout transactions."
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: raw_payments
+        description: "Raw payment gateway capture logs."
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
