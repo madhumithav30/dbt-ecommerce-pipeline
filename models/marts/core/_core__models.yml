@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Granular order transactions fact table enriched with pivoted payment totals."
+    columns:
+      - name: order_key
+        description: "Hashed surrogate primary key."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Foreign key referencing dim_customers."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+
+      - name: order_status
+        description: "Order status lifecycle tracking."
+        tests:
+          - accepted_values:
+              values: ['completed', 'placed', 'returned', 'shipped']
+
+  - name: dim_customers
+    description: "Customer dimension table enriched with order history and LTV."
+    columns:
+      - name: customer_key
+        description: "Hashed surrogate primary key."
+        tests:
+          - unique
+          - not_null
+
+      - name: lifetime_value_usd
+        description: "Customer lifetime value excluding returned orders."
+        tests:
+          - not_null

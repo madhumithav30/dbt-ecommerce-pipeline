@@ -1,0 +1,20 @@
+# dbt artifacts
+target/
+dbt_packages/
+logs/
+
+# Database files & local storage
+*.duckdb
+*.duckdb.tmp
+*.duckdb.wal
+
+# Python environment
+venv/
+__pycache__/
+*.pyc
+
+# OS & IDE metadata
+.DS_Store
+.idea/
+.vscode/
+
