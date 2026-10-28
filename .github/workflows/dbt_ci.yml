@@ -10,6 +10,9 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    env:
+      DBT_PROFILES_DIR: .  # Points dbt to the profiles.yml in the repo root
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
