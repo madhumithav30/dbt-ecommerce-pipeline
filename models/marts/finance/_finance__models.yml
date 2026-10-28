@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_daily_sales_incremental
+    description: "Daily aggregated sales metrics materialized incrementally to optimize compute."
+    columns:
+      - name: sale_date
+        description: "Transaction date partition key."
+        tests:
+          - unique
+          - not_null
+
+      - name: total_orders
+        description: "Count of non-returned orders for the date."
+        tests:
+          - not_null
+
+      - name: total_revenue_usd
+        description: "Gross revenue generated on this date."
+        tests:
+          - not_null
