@@ -10,9 +10,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-    env:
-      DBT_PROFILES_DIR: .  # Points dbt to the profiles.yml in the repo root
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -26,6 +23,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install dbt-duckdb
+
+      - name: Configure dbt Profile Directory
+        run: |
+          mkdir -p ~/.dbt
+          cp profiles.yml ~/.dbt/profiles.yml
 
       - name: Install dbt Packages
         run: |
