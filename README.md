@@ -1,6 +1,6 @@
 # Enterprise E-Commerce Analytics Platform (dbt + DuckDB)
 
-[![dbt CI/CD Pipeline](https://github.com/madhumithav30/dbt-ecommerce-pipeline/actions/workflows/dbt_ci.yml/badge.svg)](https://github.com/madhumithav30/ecommerce-analytics-dbt/actions)
+[![dbt CI/CD Pipeline](https://github.com/madhumithav30/dbt-ecommerce-pipeline/actions/workflows/dbt_ci.yml/badge.svg)](https://github.com/madhumithav30/dbt-ecommerce-pipeline/actions)
 [![dbt Version](https://img.shields.io/badge/dbt-core_1.8+-orange.svg)](https://www.getdbt.com/)
 [![Engine](https://img.shields.io/badge/Engine-DuckDB-yellow.svg)](https://duckdb.org/)
 [![Dimensional Modeling](https://img.shields.io/badge/Architecture-Kimball_Star_Schema-blue.svg)](https://en.wikipedia.org/wiki/Star_schema)
