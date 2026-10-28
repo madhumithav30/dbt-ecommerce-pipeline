@@ -10,10 +10,10 @@
 }}
 
 select 
-    customer_id,
+    id as customer_id,
     first_name,
     last_name,
     email
-from {{ ref('stg_ecommerce__customers') }}
+from {{ source('raw_ecommerce', 'raw_customers') }}
 
 {% endsnapshot %}
